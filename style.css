@@ -1,1 +1,83 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
 
+  background: radial-gradient(circle at top, #0f0f1a, #000);
+}
+
+/* 🌌 animierter Hintergrund */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: move 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes move {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50px,-50px); }
+}
+
+/* 💠 Card */
+.card {
+  position: relative;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 60px rgba(0,0,0,0.7);
+
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ✨ schweb Effekt */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 👤 Avatar */
+.avatar {
+  width: 110px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 20px white;
+}
+
+/* 🔥 Neon Name */
+h1 {
+  font-size: 28px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+
+/* Links */
+.links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
