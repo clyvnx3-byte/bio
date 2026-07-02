@@ -6,78 +6,86 @@ body {
   align-items: center;
   font-family: Arial, sans-serif;
   color: white;
+  background: #050510;
   overflow: hidden;
-
-  background: radial-gradient(circle at top, #0f0f1a, #000);
 }
 
-/* 🌌 animierter Hintergrund */
+/* Hintergrund Muster */
 body::before {
   content: "";
   position: absolute;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: move 20s linear infinite;
-  opacity: 0.3;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: move 25s linear infinite;
 }
 
 @keyframes move {
   from { transform: translate(0,0); }
-  to { transform: translate(-50px,-50px); }
+  to { transform: translate(-60px,-60px); }
 }
 
-/* 💠 Card */
+/* Enter Screen */
+#enter {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.enter-text {
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+}
+
+/* Main */
+.hidden {
+  display: none;
+}
+
+/* Card */
 .card {
-  position: relative;
   padding: 35px;
-  border-radius: 20px;
+  border-radius: 16px;
   text-align: center;
-
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 60px rgba(0,0,0,0.7);
-
-  animation: float 4s ease-in-out infinite;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.6);
 }
 
-/* ✨ schweb Effekt */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* 👤 Avatar */
+/* Avatar */
 .avatar {
-  width: 110px;
+  width: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
-  border: 2px solid white;
-  box-shadow: 0 0 20px white;
 }
 
-/* 🔥 Neon Name */
+/* Name */
 h1 {
-  font-size: 28px;
-  text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+  font-size: 22px;
+  margin: 10px 0;
 }
 
 /* Links */
 .links a {
   display: inline-block;
-  margin: 5px;
+  margin-top: 10px;
   padding: 10px 14px;
-  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
   color: white;
   text-decoration: none;
-  border-radius: 12px;
   transition: 0.2s;
 }
 
 .links a:hover {
-  background: white;
-  color: black;
-  transform: scale(1.05);
+  background: rgba(255,255,255,0.15);
 }
